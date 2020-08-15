@@ -1,0 +1,14 @@
+.propCard {
+  padding: 30px;
+  margin: 20px;
+  background-color: gray;
+}
+
+.thumbnail {
+  height: 300px;
+  width: auto;
+}
+
+.margin {
+  margin: 50px;
+}
