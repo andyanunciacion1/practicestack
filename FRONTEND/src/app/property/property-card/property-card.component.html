@@ -1,13 +1,19 @@
-<div class="row-2">
-  <div class="shadow-lg col-sm-4 p-3 margin">
-    <div class="card">
-      <img src="assets/images/img.jpg" alt="" class="thumbnail" />
-      <div class="card-body p-2">
-        <h1>{{ Person.Name }}</h1>
-        <h2>{{ Person.Age }}</h2>
-        <h3>{{ Person.Gender }}</h3>
-        <h4>{{ Person.Address }}</h4>
-      </div>
-    </div>
+<div class="card">
+  <div class="wrapper">
+    <img src="assets/images/img.jpg" alt="" />
+    <ul class="list-inline text-center member-icon animate">
+      <li class="list-inline-item">
+        <button class="btn btn-primary">E</button>
+      </li>
+      <li class="list-inline-item">
+        <button class="btn btn-primary">C</button>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body p-2">
+    <h1>{{ lipat.Name }}</h1>
+    <h2>{{ lipat.Age }}</h2>
+    <h3>{{ lipat.Gender }}</h3>
+    <h4>{{ lipat.Address }}</h4>
   </div>
 </div>
