@@ -7,6 +7,7 @@ import { Component, OnInit, Type, Input } from "@angular/core";
 })
 export class PropertyCardComponent implements OnInit {
   @Input() lipat: any;
+
   constructor() {}
 
   ngOnInit(): void {}

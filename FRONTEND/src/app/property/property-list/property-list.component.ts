@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ShareddataService } from "src/app/services/shareddata.service";
 
 @Component({
   selector: "app-property-list",
@@ -6,35 +7,18 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./property-list.component.css"],
 })
 export class PropertyListComponent implements OnInit {
-  Andy: Array<any> = [
-    {
-      Id: 1,
-      Name: "Present Andy",
-      Age: 23,
-      Gender: "Male",
-      Address: "Angeles City",
-      Image:"assets/images/present-andy",
-    },
-    {
-      Id: 2,
-      Name: "Tito Andy",
-      Age: 46,
-      Gender: "Male",
-      Address: "Angeles City",
-      Image:"assets/images/tito-andy",
-    },
-    {
-      Id: 3,
-      Name: "Lolo Andy",
-      Age: 88,
-      Gender: "Male",
-      Address: "Angeles City",
-      Image:"assets/images/lolo-andy",
-    },
+  Andy: any;
 
+  constructor(private mgaData: ShareddataService) {}
 
-  ];
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.mgaData.kuhaData().subscribe(
+      (data) => {
+        this.Andy = data;
+      },
+      (mali) => {
+        console.log(mali);
+      }
+    );
+  }
 }
