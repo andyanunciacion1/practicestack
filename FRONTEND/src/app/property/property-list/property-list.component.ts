@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ShareddataService } from "src/app/services/shareddata.service";
+import { PropertyInterface } from "src/app/interfaces/propertyInterface";
 
 @Component({
   selector: "app-property-list",
@@ -7,7 +8,7 @@ import { ShareddataService } from "src/app/services/shareddata.service";
   styleUrls: ["./property-list.component.css"],
 })
 export class PropertyListComponent implements OnInit {
-  Andy: any;
+  Andy: Array<PropertyInterface>;
 
   constructor(private mgaData: ShareddataService) {}
 
