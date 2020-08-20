@@ -10,11 +10,16 @@ import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { HeroSectionComponent } from "./hero-section/hero-section.component";
 import { ShareddataService } from "./services/shareddata.service";
 import { CreateAndyComponent } from "./property/create-andy/create-andy.component";
+import { AndyInformationComponent } from "./property/andy-information/andy-information.component";
+import { PageNotFoundComponent } from "./property/page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
   { path: "", component: HeroSectionComponent },
   { path: "versions-of-andy", component: PropertyListComponent },
+  { path: "versions-of-andy/:gender", component: PropertyListComponent },
   { path: "create-your-andy", component: CreateAndyComponent },
+  { path: "andy-information/:id", component: AndyInformationComponent },
+  { path: "**", component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -25,6 +30,8 @@ const appRoutes: Routes = [
     NavBarComponent,
     HeroSectionComponent,
     CreateAndyComponent,
+    AndyInformationComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   providers: [ShareddataService],

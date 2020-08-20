@@ -22,6 +22,7 @@
   transition-timing-function: ease-out;
   height: 300px;
   width: auto;
+  align-items: center;
 }
 
 .member-icon {

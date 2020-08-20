@@ -4,5 +4,5 @@ export interface PropertyInterface {
   Age: string;
   Address: string;
   Gender: string;
-  Image: string;
+  Image?: string;
 }

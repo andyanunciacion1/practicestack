@@ -1,12 +1,25 @@
 <div class="card">
   <div class="wrapper">
-    <img src="{{ lipat.Image }}" alt="" />
+    <img *ngIf="lipat.Image" src="assets/images/{{ lipat.Image }}" alt="" />
+    <img *ngIf="!lipat.Image" src="assets/images/img.jpg" alt="" />
     <ul class="list-inline text-center member-icon animate">
-      <li class="list-inline-item">
-        <button class="btn btn-primary">E</button>
+      <li class="list-inline-item btnsize">
+        <button class="btn btn-primary">
+          <i class="far fa-edit"></i>
+        </button>
       </li>
       <li class="list-inline-item">
-        <button class="btn btn-primary">C</button>
+        <button class="btn btn-primary btnsize">
+          <i class="fas fa-search-plus"></i>
+        </button>
+      </li>
+      <li class="list-inline-item btnsize">
+        <button
+          class="btn btn-primary"
+          routerLink="/andy-information/{{ lipat.Id }}"
+        >
+          <i class="fas fa-info"></i>
+        </button>
       </li>
     </ul>
   </div>
