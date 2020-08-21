@@ -1,0 +1,42 @@
+<div class="cont">
+  <div class="card">
+    <div class="card-header text-center">Register</div>
+    <div class="card-body">
+      <form (ngSubmit)="regSubmit()" [formGroup]="registrationForm">
+        <div class="form-group">
+          <label for="username">User Name</label>
+          <input type="text" class="form-control" formControlName="userName" />
+          <span *ngIf="userName.invalid"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" formControlName="email" />
+          <span *ngIf="email.errors.email"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="pass">Password</label>
+          <input type="text" class="form-control" formControlName="password" />
+          <span *ngIf=""></span>
+        </div>
+
+        <div class="form-group">
+          <label for="conf-pass">Confirm Password</label>
+          <input type="text" class="form-control" formControlName="confpass" />
+          <span *ngIf="registrationForm.hasError('HindiPareho')"
+            >Hindi kapareho ng pass sa taas</span
+          >
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+
+        <div>Form : {{ registrationForm.value | json }}</div>
+        <br />
+        <div>Form Stats : {{ registrationForm.status }}</div>
+      </form>
+    </div>
+  </div>
+</div>

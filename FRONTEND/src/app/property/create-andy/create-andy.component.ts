@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-create-andy',
-  templateUrl: './create-andy.component.html',
-  styleUrls: ['./create-andy.component.css']
+  selector: "app-create-andy",
+  templateUrl: "./create-andy.component.html",
+  styleUrls: ["./create-andy.component.css"],
 })
 export class CreateAndyComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  FormSubmit(YungIdgalingsaForm: NgForm) {
+    console.log(YungIdgalingsaForm);
   }
-
 }
