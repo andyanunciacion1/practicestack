@@ -6,25 +6,61 @@
         <div class="form-group">
           <label for="username">User Name</label>
           <input type="text" class="form-control" formControlName="userName" />
-          <span *ngIf="userName.invalid"></span>
+          <span *ngIf="userName.invalid && userName.touched" class="error">
+            <span *ngIf="userName.hasError('required')">
+              Username is required
+            </span>
+            <span *ngIf="userName.hasError('minlength')"
+              >Username should've atleast 8 characters</span
+            >
+            <span *ngIf="userName.hasError('maxlength')">
+              Username shouldnt have more than 20 characters
+            </span>
+          </span>
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
           <input type="text" class="form-control" formControlName="email" />
-          <span *ngIf="email.errors.email"></span>
+          <span *ngIf="email.invalid && email.touched" class="error">
+            <span *ngIf="email.errors.email">
+              Should be a valid email
+            </span>
+            <span *ngIf="email.errors.required">
+              Email shouldn't be empty
+            </span>
+          </span>
         </div>
 
         <div class="form-group">
           <label for="pass">Password</label>
           <input type="text" class="form-control" formControlName="password" />
-          <span *ngIf=""></span>
+          <span *ngIf="password.invalid && password.touched" class="error">
+            <span *ngIf="password.errors.minlength"
+              >Password should've atleast 8 characters</span
+            >
+            <span *ngIf="password.errors.required"
+              >Password shouldn't be empty</span
+            >
+            <span *ngIf="password.errors.maxlength"
+              >Password shouldnt have more than 20 characters</span
+            >
+          </span>
         </div>
 
         <div class="form-group">
           <label for="conf-pass">Confirm Password</label>
           <input type="text" class="form-control" formControlName="confpass" />
-          <span *ngIf="registrationForm.hasError('HindiPareho')"
+          <span *ngIf="confpass.invalid && confpass.touched" class="error">
+            <span *ngIf="confpass.errors.required">
+              Confirm Password shouldn't be empty
+            </span>
+          </span>
+          <span
+            *ngIf="
+              this.registrationForm.hasError('HindiPareho') && confpass.valid
+            "
+            class="error"
             >Hindi kapareho ng pass sa taas</span
           >
         </div>

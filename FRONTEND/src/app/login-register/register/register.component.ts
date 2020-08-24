@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { count } from "rxjs/operators";
 
 @Component({
   selector: "app-register",
@@ -14,8 +15,9 @@ export class RegisterComponent implements OnInit {
     this.registrationForm = new FormGroup(
       {
         userName: new FormControl(null, [
-          Validators.minLength(6),
           Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(20),
         ]),
         email: new FormControl(null, [Validators.required, Validators.email]),
         password: new FormControl(null, [
@@ -25,11 +27,12 @@ export class RegisterComponent implements OnInit {
         ]),
         confpass: new FormControl(null, [Validators.required]),
       },
+      //pwedeng wala yung this.registration, matic read nung form group sa taas
       this.customValidation
     );
   }
 
-  // Cross Validation from two fields
+  // Cross Validation from two fields : return null kung true return yung error pag false
   customValidation(VariablenameofForm: FormGroup): Validators {
     return VariablenameofForm.get("password").value ===
       VariablenameofForm.get("confpass").value
